@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -x
 
 SSHPATH="$HOME/.ssh"
 mkdir "$SSHPATH"
@@ -8,5 +8,4 @@ chmod 600 "$SSHPATH/key"
 SERVER_DEPLOY_STRING="$USERNAME@$SERVER_IP:$SERVER_DESTINATION"
 # sync it up"
 # sh -c "rsync $ARGS -e 'ssh -i $SSHPATH/key -p $SERVER_PORT' $GITHUB_WORKSPACE/$FOLDER $SERVER_DEPLOY_STRING"
-echo "rsync $ARGS -e 'ssh -i $SSHPATH/key -p $SERVER_PORT' $GITHUB_WORKSPACE/$FOLDER $SERVER_DEPLOY_STRING";
 rsync "$ARGS" -e 'ssh -i "$SSHPATH"/key -p "$SERVER_PORT"' "$GITHUB_WORKSPACE/$FOLDER $SERVER_DEPLOY_STRING";
