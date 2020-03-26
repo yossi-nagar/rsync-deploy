@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+set -eu
 
 SSHPATH="$HOME/.ssh"
 mkdir "$SSHPATH"
