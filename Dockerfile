@@ -1,7 +1,7 @@
 FROM debian:10-slim
 
 RUN apt update
-RUN apt -yq install rsync scp openssh-client
+RUN apt -yq install rsync openssh-client
 
 
 # Label
